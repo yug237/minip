@@ -1,0 +1,14 @@
+{% extends "products/base1.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <h2 class="account-heading">User ID - {{ user.username }}</h2>
+          <p class="text-secondary">Email - {{ user.email }}</p>
+           <p class="text-secondary">Type - {{ Type.typeu }}</p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+    </div>
+{% endblock content %}
