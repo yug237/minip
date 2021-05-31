@@ -12,5 +12,7 @@ class Interest(models.Model):
 	user_t = models.OneToOneField(User, on_delete=models.CASCADE)
 	gender = models.CharField(max_length=8, null=True)
 	age = models.IntegerField(null=True)
-	occupation = models.CharField(max_length=100,null=True)
+	Price = models.IntegerField(null=True)
+	Genre = models.CharField(max_length=20, null=True)
+	Movie = models.CharField(max_length=50, null=True)
 	choice = models.CharField(max_length=10, null=True)
