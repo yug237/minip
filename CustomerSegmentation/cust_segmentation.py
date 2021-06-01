@@ -39,19 +39,10 @@ ax = fig.add_subplot(111, projection='3d')
 ax.scatter(df["Age"][df.label == 0], df["Mode"][df.label == 0], df["Amount"][df.label == 0], c='blue', s=60)
 ax.scatter(df["Age"][df.label == 1], df["Mode"][df.label == 1], df["Amount"][df.label == 1], c='yellow', s=60)
 ax.scatter(df["Age"][df.label == 2], df["Mode"][df.label == 2], df["Amount"][df.label == 2], c='red', s=60)
-
-
-
-
-
-#ax.scatter(df.Age[df.label == 1], df["Annual Income (k$)"][df.label == 1], df["Spending Score (1-100)"][df.label == 1], c='red', s=60)
-#ax.scatter(df.Age[df.label == 2], df["Annual Income (k$)"][df.label == 2], df["Spending Score (1-100)"][df.label == 2], c='green', s=60)
-#ax.scatter(df.Age[df.label == 3], df["Annual Income (k$)"][df.label == 3], df["Spending Score (1-100)"][df.label == 3], c='orange', s=60)
-#ax.scatter(df.Age[df.label == 4], df["Annual Income (k$)"][df.label == 4], df["Spending Score (1-100)"][df.label == 4], c='purple', s=60)
-#ax.view_init(30, 185)
-#plt.xlabel("Age")
-#plt.ylabel("Mode")
-#ax.set_zlabel('Amount')
+ax.view_init(30, 185)
+plt.xlabel("Age")
+plt.ylabel("Mode")
+ax.set_zlabel('Amount')
 #plt.show()
 #print(df)
 
@@ -70,31 +61,3 @@ print('Analysis of data:')
 dict2=df.describe().to_dict()
 print(dict2)
 print('------------------------------------------------------------')
-print('\nDetails of customers in cluster: \n')
-product_desc = 'Clothing'
-dict3=df[df['label']==product_desc].to_dict()
-print(dict3)
-print('------------------------------------------------------------')
-print('\nPrinting Cluster related Information: \n')
-print('Age analysis:')
-age_dict=df['Age'][df['label']==product_desc].describe().to_dict()
-print(age_dict)
-print('------------------------------------------------------------')
-
-print('AMOUNT analysis:')
-amount_dict=df['Amount'][df['label']==product_desc].describe().to_dict()
-print(amount_dict)
-print('------------------------------------------------------------')
-
-print("OFFLINE SHOPPING: ")
-# empty dictionary
-mode_dict = {}
-mode_dict = {'Offline':df['Mode'][df['label']==product_desc][df['Mode']==0].count(), 'Online':df['Mode'][df['label']==product_desc][df['Mode']==1].count()}
-print(mode_dict)
-print('------------------------------------------------------------')
-print('Analysis of Cluster:')
-dict4=df[df['label']==product_desc].describe().to_dict()
-print(dict4)
-
-#print("MAXIMUM VALUES: \n")
-#print(df["label"==1].max())
