@@ -55,6 +55,12 @@ for i in categories:
 for i in categories:
 	if(cust_amount >= int(df['Amount'][df["label"]==i].mean())-500 and cust_amount <= int(df['Amount'][df["label"]==i].mean())+500):
 		choices.append(i)
-choices=list(set(choices))
-print(choices)
+# Choices contains categories in array form
+		
+choices=list(set(choices))                    # Product Category
+my_dict = dict() 
+for index,value in enumerate(choices):
+  my_dict[index] = value
+print(my_dict)
+
 
