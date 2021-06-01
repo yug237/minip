@@ -56,7 +56,6 @@ groups=df.groupby(['label'])
 
 print('------------------------------------------------------------')
 print('\nDetails of customers in cluster: \n')
-product_desc = 'Clothing'
 dict3=df[df['label']==product_desc].to_dict()
 print(dict3)
 print('------------------------------------------------------------')
