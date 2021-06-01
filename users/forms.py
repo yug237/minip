@@ -15,7 +15,7 @@ class UserRegistrationForm(UserCreationForm):
 class Intr(ModelForm):
 	gender = forms.CharField(max_length=8, required=False)
 	age = forms.IntegerField(required=True)
-	Price = forms.IntegerField(required=False)
+	Price = forms.IntegerField(required=False, label='Money recently spent on products')
 	Genre = forms.CharField(max_length=20, label='Favourite genre to stream movies')
 	Movie = forms.CharField(max_length=50, label='Favourite movie')
 	choice = forms.CharField(max_length=10,label='Enter mode of shopping')
