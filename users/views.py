@@ -23,10 +23,12 @@ def interest(request):
 			user_1 = User.objects.last()
 			gender = form2.cleaned_data.get('gender')
 			age = form2.cleaned_data.get('age')
-			occupation = form2.cleaned_data.get('occupation')
+			price = form2.cleaned_data.get('Price')
+			genre = form2.cleaned_data.get('Genre')
+			movie = form2.cleaned_data.get('Movie')
 			choice = form2.cleaned_data.get('choice')
 
-			add = Interest(user_t = user_1, gender = gender, age = age, occupation = occupation, choice = choice)
+			add = Interest(user_t = user_1, gender = gender, age = age, Price = price, Genre = genre, Movie = movie, choice = choice)
 			add.save()
 
 			messages.success(request, f'Account created for {user_1.username}!')

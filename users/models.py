@@ -16,3 +16,6 @@ class Interest(models.Model):
 	Genre = models.CharField(max_length=20, null=True)
 	Movie = models.CharField(max_length=50, null=True)
 	choice = models.CharField(max_length=10, null=True)
+
+	def __str__(self):
+		return self.Genre

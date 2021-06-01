@@ -6,6 +6,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import compP
+from users.models import Interest  
 
 class PostDetailView(DetailView):
     model = compP
@@ -48,30 +49,24 @@ def home1(request):
 	return render(request, 'products/home1.html', context)
 
 def home(request):
-	context={
 
-		'products' : compP.objects.all()
-
-	}
-	return render(request, 'products/home.html', context)
-
-
-def landing(request):
-
-	return render(request, 'products/landing.html')
-
-def common(request):
-
-	return render(request, 'products/common.html')
-
-def tp(request):
+	job = Interest.objects.filter(user_t=request.user.id)
 
 	###########################################################################
 	# Variables: genre_user_likes and movie_genre_likes
 	###########################################################################
 
-	genre_user_likes = 'Horror'
-	movie_user_likes = 'Annabelle'
+	print('This is query set')
+	print(job[0])
+
+	if job != None:
+
+		genre_user_likes = job[0].Genre
+		movie_user_likes = job[0].Movie
+
+	else:
+		genre_user_likes = 'Horror'
+		movie_user_likes = 'Annabelle'
 
 	import pandas as pd
 	import numpy as np
@@ -218,6 +213,23 @@ def tp(request):
 
 	print("---------------------------------------------------------------------------------------")
 
-	return render(request, 'users/tp.html')
 
+	context={
+		'similar' : dict1,
+		'trending' : dict2,
+		'newest' : dict3,
+		'genre' : dict5,
+		'products' : compP.objects.all()
+
+	}
+	return render(request, 'products/home.html', context)
+
+
+def landing(request):
+
+	return render(request, 'products/landing.html')
+
+def common(request):
+
+	return render(request, 'products/common.html')
 

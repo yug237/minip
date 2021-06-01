@@ -23,7 +23,6 @@ from products import views as prod_views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('tp/', prod_views.tp, name='tp'),
     path('common/',prod_views.common, name='common'),
     path('home1/',prod_views.home1, name='home1'),
     path('home/',prod_views.home, name='home'),

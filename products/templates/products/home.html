@@ -36,7 +36,86 @@
         </div>
       </div>
 
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Your list of movies to choose from </h1>
+          </div>
+        </div>
+      </section>
 
+            <p ><h4>Movies similar to Annabelle</h4></p>
+            <div class="container-body mt-4">
+              <div >
+               <ul class="mt-5">
+                {% for key,value in similar.items %}
+                  {% for key1,value1 in value.items%}
+
+                    {% if key != 'Director' %}
+                      <li class="lead text-muted"><h6>{{ value1 }}</h6></li>
+                    {% endif%}
+
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+              </div>
+          </div>
+<br>
+
+          <p ><h4>Movies trending worldwide</h4></p>
+            <div class="container-body mt-4">
+              <div >
+               <ul class="mt-5">
+                {% for key,value in trending.items %}
+                  {% for key1,value1 in value.items%}
+
+                    {% if key != 'popularity' %}
+                      <li class="lead text-muted"><h6>{{ value1 }}</h6></li>
+                    {% endif%}
+
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+              </div>
+          </div>
+
+<br>
+
+          <p ><h4>Recently released</h4></p>
+            <div class="container-body mt-4">
+              <div >
+               <ul class="mt-5">
+                {% for key,value in newest.items %}
+                  {% for key1,value1 in value.items%}
+
+                    {% if key != 'release_date' %}
+                      <li class="lead text-muted"><h6>{{ value1 }}</h6></li>
+                    {% endif%}
+
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+              </div>
+          </div>
+
+<br>
+
+        <p ><h4>Movies related to genres suiting you</h4></p>
+            <div class="container-body mt-4">
+              <div >
+               <ul class="mt-5">
+                {% for key,value in genre.items %}
+                  {% for key1,value1 in value.items%}
+
+                    {% if key != 'Genres' %}
+                      <li class="lead text-muted"><h6>{{ value1 }}</h6></li>
+                    {% endif%}
+
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+              </div>
+          </div>
     </main>
 {% endblock content %}
 
